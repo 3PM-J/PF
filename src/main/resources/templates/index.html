@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysHost - Sistema Hospitalario</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --background-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--background-color), #bdc3c7);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .welcome-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success-color), #229954);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-success:hover {
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+        }
+
+        .stats-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🏥 SysHost</h1>
+        <p>Sistema Integral de Gestión Hospitalaria</p>
+    </header>
+
+    <div class="container">
+        <section class="welcome-section">
+            <h2>Bienvenido al Sistema SysHost</h2>
+            <p>Gestiona de manera eficiente la información de pacientes, historiales médicos y procesos hospitalarios con nuestra plataforma integral diseñada para profesionales de la salud.</p>
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">👥</span>
+                <h3>Gestión de Pacientes</h3>
+                <p>Registra, actualiza y consulta información completa de pacientes de manera rápida y segura.</p>
+                <a href="/pacientes" class="btn">Ver Pacientes</a>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">📋</span>
+                <h3>Registro Rápido</h3>
+                <p>Formulario intuitivo para el registro de nuevos pacientes con validaciones automáticas.</p>
+                <a href="/registro" class="btn btn-success">Nuevo Registro</a>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h3>Búsqueda Avanzada</h3>
+                <p>Encuentra pacientes rápidamente por nombre, DNI o cualquier criterio específico.</p>
+                <a href="/pacientes" class="btn">Buscar Pacientes</a>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Estadísticas del Sistema</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 id="totalPacientes">0</h3>
+                    <p>Pacientes Registrados</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="pacientesActivos">0</h3>
+                    <p>Pacientes Activos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Disponibilidad</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Seguridad</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SysHost - Sistema de Gestión Hospitalaria. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Cargar estadísticas al cargar la página
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                const response = await fetch('/api/pacientes');
+                const result = await response.json();
+                
+                if (result.success) {
+                    const pacientes = result.data;
+                    const total = pacientes.length;
+                    const activos = pacientes.filter(p => p.activo).length;
+                    
+                    document.getElementById('totalPacientes').textContent = total;
+                    document.getElementById('pacientesActivos').textContent = activos;
+                }
+            } catch (error) {
+                console.error('Error al cargar estadísticas:', error);
+            }
+        });
+    </script>
+</body>
+</html>
